@@ -26,7 +26,10 @@ if __name__ == '__main__':
 	tomorrow_forecast = r_dict['HeWeather data service 3.0'][0]['daily_forecast'][1]
 	today_date = today_forecast['date']
 	tomorrow_date = tomorrow_forecast['date']
-	today_temperatrue = today_forecast['tmp']['min'] + '-' + today_forecast['tmp']['max']
+	today_temperatrue = today_forecast['tmp']['min'] + '℃' + '-' + today_forecast['tmp']['max'] + '℃'
 	today_wheather = '白天'+ today_forecast['cond']['txt_d'] + '夜晚' + today_forecast['cond']['txt_n']
+	tomorrow_temperatrue = tomorrow_forecast['tmp']['min'] + '℃' + '-' + tomorrow_forecast['tmp']['max'] + '℃'
+	tomorrow_wheather = '白天'+ tomorrow_forecast['cond']['txt_d'] + '夜晚' + tomorrow_forecast['cond']['txt_n']
 	cityname = r_dict['HeWeather data service 3.0'][0]['basic']['city']
 	print('{0}日{1}的温度是{2},天气状况{3}'.format(today_date, cityname, today_temperatrue, today_wheather))
+	print('{0}日{1}的温度是{2},天气状况{3}'.format(tomorrow_date, cityname, tomorrow_temperatrue, tomorrow_wheather))

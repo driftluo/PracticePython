@@ -3,7 +3,7 @@
 '''
 根据起始页面的外链不断获取外链进行随机跳转，如果当前页面没有外链，先进入一个内链，查找这个内链上的
 所有外链，随机跳转，未处理异常(如加载未完成导致的bsobj对象为str、碰到google等国内无法访问
-403forbidden等等)
+403forbidden等等) ---来自Web Scraping with Python,略有改动
 '''
 
 from urllib.request import urlopen

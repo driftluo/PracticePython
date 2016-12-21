@@ -17,8 +17,8 @@ def findNewUpdate(bookname):
 	driver.switch_to_window(driver.window_handles[0])
 	driver.find_element_by_class_name("search-box").send_keys(bookname)
 	driver.find_element_by_id("search-btn").click()
-	a = driver.window_handles
-	driver.switch_to_window(a[-1])
+	a = driver.window_handles		#获取当前所有窗口的句柄(ID)，根据打开时间排序，返回list
+	driver.switch_to_window(a[-1])  #转换到最新的一个窗口
 	time.sleep(2)
 	f = driver.find_element_by_xpath('//*[@id="result-list"]/div/ul/li[1]/div[2]/h4/a').click()
 	a = driver.window_handles
@@ -37,7 +37,7 @@ def findNewUpdate(bookname):
 		driver.close()
 	return name,dd
 
-booknames = ['我的幻想世界','主神降临英雄联盟','深渊主宰']
+booknames = ['']
 t = {}
 for bookname in booknames:
 	x=findNewUpdate(bookname)

@@ -46,4 +46,5 @@ class Demo(Frame):
 	def report(self):
 		print(self.var.get())
 
-Demo().mainloop()
+if __name__ == '__main__':
+	Demo().mainloop()
